@@ -2,8 +2,9 @@
 
     @section('content')
     <h2>Add New Task</h2>
-    <for method="POST" action="/task">
+    <form method="POST" action="/tasks">
         <div class="form-group">
+            @csrf
            <label for="description">Task Description</label>
            <input type="text" class="form-control" name="description">
         </div>
