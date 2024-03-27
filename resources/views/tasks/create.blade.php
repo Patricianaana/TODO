@@ -1,6 +1,6 @@
     @extends('layouts.style')
 
-    @section('content')
+    @section('items')
     <h2>Add New Task</h2>
     <form method="POST" action="/tasks">
         <div class="form-group">
