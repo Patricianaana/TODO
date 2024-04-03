@@ -10,7 +10,9 @@ class TaskController extends Controller
     //
     public function index()
     {
-        $tasks =Task::orderBy('id', 'DESC')->get();
+        $tasks = Task::orderBy('completed_at')
+        ->orderBy('id', 'DESC')
+        ->get();
         return view('tasks.index', [
             'tasks' => $tasks,
         ]);
@@ -23,14 +25,26 @@ class TaskController extends Controller
     public function store()
     {
         // return 'your data was submitted!';
-        $task = Task::create([
+        Task::create([
             'description' => request('description'),
         ]);
         return redirect('/');
 
     }
-    public function delete()
+    public function delete($id)
     {
-
+        $task = Task::find($id);
+        $task->delete();
+        return redirect('/');
     }
+
+    public function update($id)
+    {
+        $task = Task::where('id',$id)->first();
+
+        $task->completed_at = now();
+        $task->save();
+        return redirect('/');
+    }
+
 }
