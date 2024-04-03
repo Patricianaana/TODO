@@ -15,6 +15,6 @@ Route::get('/create', [TaskController::class, 'create']);
 
 Route::post('/tasks', [TaskController::class, 'store']);
 
-Auth::routes();
+// Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
