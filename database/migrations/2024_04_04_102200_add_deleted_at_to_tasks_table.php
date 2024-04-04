@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::table('tasks', function (Blueprint $table) {
             //
+            $table->softDeletes();
         });
     }
 
@@ -23,7 +24,7 @@ return new class extends Migration
     {
         Schema::table('tasks', function (Blueprint $table) {
             //
-            $table->dropColumn(['deleted_at']);
+            $table->dropSoftDeletes();
         });
     }
 };

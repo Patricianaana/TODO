@@ -12,7 +12,9 @@
             <form action="/tasks/{{$task->id }}" method="POST">
                 @method('PATCH')
                 @csrf
-                <div class="d-grid">
+                <div>
+                    <a href="" class="btn btn-info">View</a>
+                    <a href="" class="btn btn-success">Edit</a>
                     <button input="submit" class="btn btn-light">Complete</button>
                 </div>
             </form>
@@ -20,7 +22,7 @@
             <form action="/tasks/{{$task->id }}" method="POST">
                 @method('DELETE')
                 @csrf
-                <div class="d-grid">
+                <div>
                     <button input="submit" class="btn btn-danger">Delete</button>
                 </div>
             </form>
