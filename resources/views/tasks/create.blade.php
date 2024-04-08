@@ -1,4 +1,4 @@
-    @extends('layouts.style')
+    @extends('bootstrap.style')
 
     @section('items')
     <h2>Add New Task</h2>
@@ -14,14 +14,17 @@
     <form method="POST" action="/tasks">
         <div class="form-group mb-1">
             @csrf
+            <label for="title">Task Title</label>
+            <input type="text" name="title" class="form-control mb-1">
            <label for="description">Task Description</label>
            <input type="text" class="form-control" name="description">
-        </div>
-        {{-- @error('description')
-           <div class="alert alert-danger" role="alert">
-              {{$message}}
+           <label for="due_date">Due Date</label>
+           <div class="col-sm-4">
+             <div class="input-group">
+              <input type="date" class="form-control" name="due_date">
+             </div>
            </div>
-        @enderror --}}
+        </div>
         <div class="d-grid form-group mt-3">
             <button type="submit" class="btn btn-primary">Create Task</button>
         </div>

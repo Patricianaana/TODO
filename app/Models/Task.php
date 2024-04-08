@@ -12,10 +12,17 @@ class Task extends Model
     // use HasFactory;
     public $table = 'tasks';
     protected $fillable = [
+        'title',
         'description',
+        'due_date',
     ];
 
     public function isCompleted(){
         return $this->completed_at !== null;
+    }
+
+    public function details()
+    {
+        return $this->hasOne(Detail::class, 'id');
     }
 }

@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TaskController;
-use League\CommonMark\Extension\TaskList\TaskListExtension;
+
 
 // Route::get('/' ,function(){
 //     return view('welcome');
@@ -20,6 +20,12 @@ Route::delete('/tasks/{id}', [TaskController::class, 'delete']);
 
 Route::patch('/tasks/{id}', [TaskController::class, 'update']);
 
-// Auth::routes();
+Route::get('/view/{id}', [TaskController::class,'viewDetails']);
+
+Route::get('edit/{id}', [TaskController::class, 'edit']);
+
+Route::get('/edit', [TaskController::class, 'updateTask']);
+
+Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
