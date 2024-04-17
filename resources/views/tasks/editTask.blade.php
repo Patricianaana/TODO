@@ -24,6 +24,8 @@
          <div class="input-group">
           <input type="date" class="form-control" name="due_date" value="{{ $task['due_date'] }}">
         </div>
+      </div>
+    </div>
         <div class="d-grid form-group mt-3">
           <button type="submit" class="btn btn-primary">Update Task</button>
       </div>
